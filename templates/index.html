@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-EDGE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summarize.AI</title>
+    
+    <!-- CSS styles for the design -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        
+        .heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .heading h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        form {
+            margin-bottom: 20px;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            margin-bottom: 10px;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        textarea[name="result"] {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+    </style>
+    
+    <!-- JavaScript for optional functionality -->
+    
+</head>
+<body>
+    <div class="heading">
+        <h1>Summarize.AI</h1>
+    </div>
+    
+    <form action="{{url_for('Summarize')}}" method="post">
+        <textarea name="data" placeholder="Enter your text" required="required"></textarea>
+        <input type="range" min="20" max="1000" name="maxL" value="100">
+        <button type="submit">Submit</button>
+    </form>
+    
+    <h3>Summarized text</h3>
+    <textarea name="result" readonly>{{result}}</textarea>
+</body>
+</html>
